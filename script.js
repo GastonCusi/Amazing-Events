@@ -19,7 +19,7 @@ function filtroGeneral() {
 //función para crear las checkboxes
 
 function crearCheckbox(array) {
-  let arrayDates = array.map((element) => element.date);
+  let arrayDates = array.map((element) => element.category);
   let setDates = new Set(
     arrayDates.sort((a, b) => {
       if (a < b) {
