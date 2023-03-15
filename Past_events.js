@@ -71,8 +71,8 @@ function imprimirTarjetas(array) {
     return;
   }
   let tarjetas = "";
-  if (data.events.date <= data.currentDate) {
-    array.forEach((element) => {
+  array.map((element) => {
+    if (element.date <= data.currentDate) {
       tarjetas += `
         <div class="card text-bg-light mb-3" style="max-width: 18rem">
         <img src="${element.image}" class="card-img-top" alt="...">
@@ -83,7 +83,7 @@ function imprimirTarjetas(array) {
             <a href="./details.html" class="btn btn-primary">Details</a>
         </div>
         </div>`;
-    });
-    contenedor.innerHTML = tarjetas;
-  }
+    }
+  });
+  contenedor.innerHTML = tarjetas;
 }
