@@ -1,14 +1,10 @@
-let queryString = window.location.search;
+let params = new URLSearchParams(location.search);
 
-let paramsQ = new URLSearchParams(queryString);
+let id = params.get("id");
 
-let idQ = paramsQ.get("id");
+let tarjeta = data.events.find((info) => info._id == id);
 
-let fracEvents = data.events;
-
-let tarjeta = fracEvents.find((element) => element._id == idQ);
-
-const contenedor = document.getElementById("contenedor");
+let contenedor = document.getElementById("contenedor-detalles");
 
 let htmlString = "";
 
