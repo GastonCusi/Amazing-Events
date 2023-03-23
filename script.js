@@ -1,3 +1,5 @@
+let arrayEvents = data.events;
+
 const contenedor = document.getElementById("contenedor");
 const contenedorCheck = document.getElementById("contenedorCheck");
 const input = document.getElementById("search");
@@ -6,8 +8,16 @@ const input = document.getElementById("search");
 input.addEventListener("input", filtroGeneral);
 contenedorCheck.addEventListener("change", filtroGeneral);
 
-imprimirTarjetas(data.events);
-crearCheckbox(data.events);
+fetch("https://mindhub-xj03.onrender.com/api/amazing");
+  .then((response) => response.json())
+  .then(() => {
+    filtroGeneral(arrayEvents);
+    imprimirTarjetas(arrayEvents);
+    crearCheckbox(arrayEvents);
+})
+
+//imprimirTarjetas(data.events);
+//crearCheckbox(data.events);
 
 //funcion filtro de filtros
 function filtroGeneral() {
